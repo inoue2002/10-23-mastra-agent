@@ -1,4 +1,4 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": ".mastra/output/playground"
+  "buildCommand": "npm run build && cp -r .mastra/output/playground playground",
+  "outputDirectory": "playground"
 }
