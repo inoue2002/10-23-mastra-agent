@@ -1,4 +1,20 @@
 {
-  "buildCommand": "echo 'No build needed'",
-  "outputDirectory": "public"
+  "version": 2,
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "builds": [
+    {
+      "src": ".mastra/output/index.mjs",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [".mastra/output/**"]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": ".mastra/output/index.mjs"
+    }
+  ]
 }
